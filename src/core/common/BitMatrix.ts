@@ -519,4 +519,8 @@ export default class BitMatrix /*implements Cloneable*/ {
         return new BitMatrix(this.width, this.height, this.rowSize, this.bits.slice());
     }
 
+    public inverted(): BitMatrix {
+        return new BitMatrix(this.width, this.height, this.rowSize, this.bits.map(byte => ~byte));
+    }
+
 }
